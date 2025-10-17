@@ -29,11 +29,35 @@ This concept is really pushed far by only using the key/slot system for every ke
 - Undo button,
 - Main menu navigation...
 
-<p align="center">
-  <img alt="Second level of the base game" src="../assets/images/projects/onu/onu-base-1.png" width="49%">
-&nbsp; 
-  <img alt="Fifth level of the base game" src="../assets/images/projects/onu/onu-base-2.png" width="49%">
-</p>
+<style>
+  .responsive-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1%; /* nice small space on desktop */
+  }
+
+  .responsive-images img {
+    width: 49%;
+    height: auto;
+  }
+
+  @media (max-width: 600px) {
+    .responsive-images {
+        flex-direction: column;  /* Stack vertically */
+        align-items: center;     /* Center each image */
+        gap: 10px;               /* Vertical space between them */
+    }
+    .responsive-images img {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="responsive-images">
+  <img alt="Second level of the base game" src="../assets/images/projects/onu/onu-base-1.png">
+  <img alt="Fifth level of the base game" src="../assets/images/projects/onu/onu-base-2.png">
+</div>
 
 ## A remake ?
 
