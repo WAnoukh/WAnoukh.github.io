@@ -1,0 +1,8 @@
+<span class="post-meta">
+    Tags: 
+    {% for tag in projects.tags %}
+    <span>
+        {{tag}}{%- if forloop.index < forloop.length -%},{%- endif -%}
+    </span>
+    {% endfor %}
+</span>

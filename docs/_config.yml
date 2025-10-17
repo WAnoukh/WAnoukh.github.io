@@ -19,3 +19,9 @@ baseurl: ""
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
+
+collections:
+  projects:
+      output: true
+      permalink: /:collection/:name
+collections_dir: collections
