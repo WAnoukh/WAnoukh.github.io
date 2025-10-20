@@ -17,7 +17,7 @@ The source code is available [here](https://github.com/WAnoukh/ONU).
 
 ## Origins
 
-It is based on ["Oui Non... Unless"](https://kyo-cz.itch.io/ouinon-unless), a game I programed and designer with [Kyo](https://kyo-cz.itch.io/) and [Ori](https://oribellame.itch.io/).
+It is based on "Oui Non... Unless"\( playable [here](https://kyo-cz.itch.io/ouinon-unless) \), a game I programed and designer with [Kyo](https://kyo-cz.itch.io/) and [Ori](https://oribellame.itch.io/).
 The original game was made in Unity for a 1-week game jam, organised by the univeristy's associtation: Arcadia.
 
 It differs from classic sokoban-like games by having __in-game representations__ of your __keyboard keys__. 
