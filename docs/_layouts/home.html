@@ -21,21 +21,28 @@ layout: base
     {%- if site.projects.size > 0 -%}
         <ul class="post-list">
         {% for projects in site.projects %}
-        <span class="post-meta">
+        <h3><a class="post-link" href="{{projects.url | relative_url}}">{{ projects.name }}</a></h3>
+        <p class = "proj-excerpt">
+        {{ projects.excerpt | markdownify | strip_html | truncatewords: 50 }}
+        </p>
+        <p class="proj-meta">
             Tags: 
             {% for tag in projects.tags %}
             <span>
                 {{tag}}{%- if forloop.index < forloop.length -%},{%- endif -%}
             </span>
             {% endfor %}
-        </span>
-        <h3><a class="post-link" href="{{projects.url | relative_url}}">{{ projects.name }}</a></h3>
-        <p>{{ projects.excerpt | markdownify}}</p>
+        </p>
         {% endfor %}
         </ul>
     {%- endif -%}
 
+
+    {%- if posts.size > 0 -%}
+    {%- if site.projects.size > 0 -%}
     <hr>
+    {%- endif -%}
+    {%- endif -%}
 
     {%- if posts.size > 0 -%}
         <h2>Blog Posts </h2>

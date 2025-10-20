@@ -234,7 +234,17 @@
   @include relative-font-size(1.5);
 }
 
+.proj-excerpt
+{
+  margin-bottom: $spacing-unit * .2;
+}
 
+.proj-meta
+{
+  font-size: $small-font-size;
+  color: $brand-color-dimmed;
+  margin-bottom: $spacing-unit * .5;
+}
 
 /**
  * Posts
