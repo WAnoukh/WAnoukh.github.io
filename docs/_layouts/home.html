@@ -19,8 +19,11 @@ layout: base
     <h1>Projects: </h1>
 
     {%- if site.projects.size > 0 -%}
+        {% assign with_order = site.projects | where_exp: "item", "item.order != nil" | sort: "order" %}
+        {% assign without_order = site.projects | where_exp: "item", "item.order == nil" %}
+        {% assign sorted_items = with_order | concat: without_order %}
         <ul class="post-list">
-        {% for projects in site.projects %}
+        {% for projects in sorted_items %}
             <div class="proj-elmt">
             {%- if projects.thumbnail != null -%}
             <img src="{{projects.thumbnail}}">

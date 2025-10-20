@@ -4,6 +4,7 @@ layout: project
 tags: ["C", "Game", "2D", "OpenGL", "Custom Engine"]
 is_article: true 
 thumbnail: ../assets/images/projects/onu/editor.png
+order: 0
 ---
 
 Onü is a sokoban-inspired 2D game made in __pure C__, using __OpenGL__. 

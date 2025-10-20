@@ -24,8 +24,4 @@ collections:
   projects:
       output: true
       permalink: /:collection/:name
-      order:
-        - onu.md
-        - yes.md
-        - mood.md
 collections_dir: collections
