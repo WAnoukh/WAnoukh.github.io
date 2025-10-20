@@ -12,6 +12,8 @@ The game is about ever-growing school of fish that you can control with your mou
 To *grow* it you must collide with "rogue" fishes to rally them to your group.
 The game ends when you don't have a single controlled fish left \(because they were blowed out by mines, or by being kicked of the screen by an obstacle\).
 
+<img alt="Screenshot of the game" src="../assets/images/projects/yes/yes.png">
+
 ## Fish Behaviour
 
 This game was fun to make.
