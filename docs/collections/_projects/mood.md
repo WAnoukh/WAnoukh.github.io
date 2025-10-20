@@ -12,6 +12,6 @@ Mood is a doom like rendering engine bundled with a map editor.
 
 ### Screenshots: 
 
-<img style="width:100%" alt="Screenshot of the game" src="../assets/images/projects/mood/MovingMood.gif">
+<img style="width:100%" alt="In game gameplay" src="../assets/images/projects/mood/MovingMood.gif">
 &nbsp; 
-<img alt="Screenshot of the game" src="../assets/images/projects/mood/WorldEditor1.png">
+<img alt="In editor screenshot" src="../assets/images/projects/mood/WorldEditor1.png">
