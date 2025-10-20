@@ -246,6 +246,18 @@
   margin-bottom: $spacing-unit * .5;
 }
 
+.proj-elmt
+{
+  background-color: #D0F0F0;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid darkgrey;
+  border-radius: 10px; /* this makes the corners rounded */
+}
+
+.proj-link {
+  display: block;
+}
 /**
  * Posts
  */

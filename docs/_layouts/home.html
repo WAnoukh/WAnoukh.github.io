@@ -16,23 +16,33 @@ layout: base
         {% assign posts = site.posts %}
     {% endif %}
 
-    <h2>Projects </h2>
+    <h1>Projects </h1>
 
     {%- if site.projects.size > 0 -%}
         <ul class="post-list">
         {% for projects in site.projects %}
-        <h3><a class="post-link" href="{{projects.url | relative_url}}">{{ projects.name }}</a></h3>
-        <p class = "proj-excerpt">
-        {{ projects.excerpt | markdownify | strip_html | truncatewords: 50 }}
-        </p>
-        <p class="proj-meta">
-            Tags: 
-            {% for tag in projects.tags %}
-            <span>
-                {{tag}}{%- if forloop.index < forloop.length -%},{%- endif -%}
-            </span>
-            {% endfor %}
-        </p>
+            <div class="proj-elmt">
+            {%- if projects.thumbnail != null -%}
+            <img src="{{projects.thumbnail}}">
+            {%- endif -%}
+            <h2>{{ projects.name }}</h2>
+            <p class = "proj-excerpt">
+            {{ projects.excerpt | markdownify | strip_html | truncatewords: 50 }}
+            </p>
+            {%- if projects.is_article == true -%}
+            <p><a class="proj-link" href="{{projects.url | relative_url}}">
+                Read the article...
+            </a></p>
+            {%- endif -%}
+            <p class="proj-meta">
+                Tags: 
+                {% for tag in projects.tags %}
+                    <span>
+                        {{tag}}{%- if forloop.index < forloop.length -%},{%- endif -%}
+                    </span>
+                {% endfor %}
+            </p>
+            </div>
         {% endfor %}
         </ul>
     {%- endif -%}
