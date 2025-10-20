@@ -7,7 +7,7 @@ thumbnail: ../assets/images/projects/yes/yes.png
 order: 1
 ---
 
-Yes is a week-end-long game jam submission made with Unity.
+Yes is a weekend-long game jam submission made with Unity.
 It is a 2D horizontal-scroller game where you need to manage a school of fishes to avoid obstacles.
 It was made by me, [Kumpo](https://itch.io/profile/kumpo), [Ori](Ori) and [Oroshibu](https://oroshibu.itch.io/) and is playable [__here__](https://anoukh.itch.io/yes) on Itch.
 
