@@ -13,7 +13,7 @@ I made renderers using signed distance functions.
 
 ### Basic Rendering
 
-My first goal was to render basic shape accounting for lights and shadows.
+My first goal was to render basic shapes accounting for lights and shadows.
 
 You can watch it interactively [__here__](https://www.shadertoy.com/view/csV3zR) on Shadertoy.
 
@@ -22,7 +22,7 @@ You can watch it interactively [__here__](https://www.shadertoy.com/view/csV3zR)
 ### Menger Sponge
 
 Then I wanted to spice it a bit by rendering the Menger sponge, the 3D version of the Sierpinski carpet.
-Thank to an [Inigo Quilez article](https://iquilezles.org/articles/menger/), I was able to render the sponge.
+Thanks to an [Inigo Quilez article](https://iquilezles.org/articles/menger/), I was able to render the sponge.
 
 You can watch it interactively [__here__](https://www.shadertoy.com/view/DlBSzm) on Shadertoy.
 

@@ -7,8 +7,8 @@ layout: home
 
 <h1> Welcome ! </h1>
 
-Hello, I'm Anoukhan Wachnicki and I'm a newly graduate in Computer-Science engineering.
-Since very young I was interested and passionate about programming and video game making.
-This site is a place were I document projects and thoughts I had during thoses year of mastering my craft.
+Hello, I'm Anoukhan Wachnicki and I'm a newly graduated in Computer Science Engineering.
+Since very young I have been interested and passionate about programming and video game making.
+This site is a place where I document projects and thoughts I had during thoses years of mastering my craft.
 
-Feel free to contact me in case you want to collaborate with me !
+Feel free to contact me in case you want to collaborate with me!

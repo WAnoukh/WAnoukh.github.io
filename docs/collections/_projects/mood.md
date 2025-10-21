@@ -9,4 +9,4 @@ thumbnail:
 is_article: false 
 ---
 
-Mood is a doom like rendering engine bundled with a map editor.
+Mood is a doom-like rendering engine bundled with a map editor.
