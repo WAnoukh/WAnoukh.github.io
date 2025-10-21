@@ -3,7 +3,9 @@ name: Shadertoy Experiments
 layout: project 
 tags: ["GLSL", "Shader", "Ray Marching", "Signed Distance Function", "Custom Renderer"]
 is_article: true
-thumbnail: ../assets/images/projects/shadertoy/sdf.png
+thumbnail: 
+    - ../assets/images/projects/shadertoy/sdf.png
+    - ../assets/images/projects/shadertoy/fract.png
 ---
 
 [Shadertoy](https://www.shadertoy.com/) is a website where you can create, share and view shaders.

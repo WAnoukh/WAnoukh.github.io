@@ -3,7 +3,7 @@ name: Onü
 layout: project 
 tags: ["C", "Game", "2D", "OpenGL", "Custom Engine"]
 is_article: true 
-thumbnail: ../assets/images/projects/onu/editor.png
+thumbnail: ["../assets/images/projects/onu/editor.png", "../assets/images/projects/onu/game.png"]
 order: 0
 ---
 

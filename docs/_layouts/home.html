@@ -2,6 +2,75 @@
 layout: base
 ---
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Find all carousels on the page
+  const carousels = document.querySelectorAll('.carousel');
+
+  carousels.forEach((carousel) => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+    const prevBtn = carousel.querySelector('.nav.prev');
+    const nextBtn = carousel.querySelector('.nav.next');
+
+    if (!track || slides.length === 0) return;
+
+    let index = 0;
+    let slideWidth = slides[0].offsetWidth;
+
+    // Recompute slide width on resize (important for responsive layouts)
+    const recompute = () => {
+      slideWidth = slides[0].offsetWidth;
+    };
+    window.addEventListener('resize', recompute);
+    // Also recompute when images load (to avoid 0 width issue)
+    slides.forEach(sl => {
+      const img = sl.querySelector('img');
+      if (img) img.addEventListener('load', recompute);
+    });
+
+    function scrollToIndex(i, smooth = true) {
+      // clamp/normalize index to [0, slides.length-1]
+      index = ((i % slides.length) + slides.length) % slides.length;
+      track.scrollTo({
+        left: slideWidth * index,
+        behavior: smooth ? 'smooth' : 'auto'
+      });
+    }
+
+    nextBtn && nextBtn.addEventListener('click', () => {
+      scrollToIndex(index + 1);
+    });
+    prevBtn && prevBtn.addEventListener('click', () => {
+      scrollToIndex(index - 1);
+    });
+
+    // Keep JS index in sync with manual scroll gestures
+    let scrollTimeout = null;
+    track.addEventListener('scroll', () => {
+      // debounce-ish: update index when scrolling stops or periodically
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        if (slideWidth === 0) recompute();
+        index = Math.round(track.scrollLeft / (slideWidth || 1));
+        // clamp
+        index = Math.max(0, Math.min(index, slides.length - 1));
+      }, 80);
+    });
+
+    // Optional: keyboard control when carousel is focused
+    carousel.tabIndex = 0; // make focusable
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); scrollToIndex(index + 1); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); scrollToIndex(index - 1); }
+    });
+
+    // start at index 0 (correct initial scroll, no smooth animation)
+    scrollToIndex(0, false);
+  });
+});
+</script>
+
 <div class="home">
     {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
@@ -25,8 +94,29 @@ layout: base
         <ul class="post-list">
         {% for projects in sorted_items %}
             <div class="proj-elmt">
+
+            <!--thumbnail-->
             {%- if projects.thumbnail != null -%}
+
+            {%- if projects.thumbnail.first -%}
+            <div class="carousel">
+                <button class="nav prev" aria-label="Previous image">‹</button>
+
+                <div class="carousel-track" id="carouselTrack">
+                    {% for image in projects.thumbnail %}
+                    <div class="carousel-slide">
+                        <img src="{{ image }}" alt="Gallery image">
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <button class="nav next" aria-label="Next image">›</button>
+            </div>
+            {%- else -%}
             <img src="{{projects.thumbnail}}">
+            {%- endif -%}
+
+
             {%- endif -%}
             <h2>{{ projects.name }}</h2>
             <p class = "proj-excerpt">
