@@ -44,7 +44,7 @@ Arenas are blocks of memory that we use to store this with similar life-times.
 We can then decide what allocation strategy we use inside the arenas, 
 thus saving a lot of *malloc* cost, and simplifying *frees* by just freeing a bunch of data at once.
 
-So arenas are by themselves very useful, but in our example it's even better!
+Arenas are by themselves very useful, but in our example it's even better!
 We can malloc some arenas in our EXE and pass them to the HOT. 
 If every allocation in the HOT is made inside those arenas every memory will be __saved between reloads__.
 
