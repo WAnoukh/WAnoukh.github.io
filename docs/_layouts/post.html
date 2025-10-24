@@ -29,6 +29,12 @@ layout: base
         {% endfor %}
       </div>
       {%- endif %}
+      {% if page.related  %}
+      <div >
+      {% assign related_page = site.projects | where: "name", page.related | first %}
+      Related to <a href="{{ related_page.url | relative_url }}"> {{ related_page.name }} </a>
+      </div>
+      {% endif %}
     </div>
   </header>
 
