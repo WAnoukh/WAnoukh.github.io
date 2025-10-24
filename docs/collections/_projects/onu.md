@@ -73,7 +73,7 @@ That will lead me to discover how to simplify memory management with __memory ar
 For the people not knowing what an arena is or still fearing C programming, I really recommend the following video.
 I think it was the one that really motivated me to use C for my next project.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9UIIMBqq1D4?si=mGSp9nXogj6FulGJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="500px" src="https://www.youtube.com/embed/9UIIMBqq1D4?si=mGSp9nXogj6FulGJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Conclusion
 
