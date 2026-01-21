@@ -324,6 +324,23 @@
   right: 10px;
 }
 
+.projects-full {
+  width: 80vw;
+  margin-left: calc(-40vw + 50%);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 2rem;
+  align-items: start; /* prevents forcing same height */
+}
+.project-card {
+  padding: 10px;
+  border-radius: 8px;
+  background: #f5f5f5;
+}
+
 /**
  * Posts
  */

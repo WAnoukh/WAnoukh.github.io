@@ -5,6 +5,7 @@ tags: ["Unity", "Game Jam", "2D"]
 is_article: true
 thumbnail: ../assets/images/projects/yes/yes.png
 order: 1
+itch: "https://anoukh.itch.io/yes"
 ---
 
 Yes is a weekend-long game jam submission made with Unity.

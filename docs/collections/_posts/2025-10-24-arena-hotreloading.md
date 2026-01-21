@@ -4,7 +4,7 @@ title:  "Memory Arenas and Hot-reloading!"
 date:   2025-10-24 
 categories: jekyll update
 excerpt_separator: <!--more-->
-related: Onü
+related: Onü Remake
 ---
 
 I just recently added __hot reloading__ to my game [Onü]({% link _projects/onu.md %}).

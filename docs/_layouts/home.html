@@ -85,6 +85,132 @@ document.addEventListener('DOMContentLoaded', () => {
         {% assign posts = site.posts %}
     {% endif %}
 
+
+
+    <div class="projects-full">
+    <h1>Projects: </h1>
+	   {%- if site.projects.size > 0 -%}
+	       {% assign with_order = site.projects | where_exp: "item", "item.order != nil" | sort: "order" %}
+	       {% assign without_order = site.projects | where_exp: "item", "item.order == nil" %}
+	       {% assign sorted_items = with_order | concat: without_order %}
+		  <div class="projects-grid">
+		      {% for projects in sorted_items %}
+		          <div class="project-card">
+
+            {%- if projects.thumbnail != null -%}
+
+            {%- if projects.thumbnail.first -%}
+            <div class="carousel">
+                <button class="nav prev" aria-label="Previous image">‹</button>
+
+                <div class="carousel-track" id="carouselTrack">
+                    {% for image in projects.thumbnail %}
+                    <div class="carousel-slide">
+                        <img src="{{ image }}" alt="Gallery image">
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <button class="nav next" aria-label="Next image">›</button>
+            </div>
+            {%- else -%}
+            <div class="carousel-slide">
+            <img src="{{projects.thumbnail}}">
+            </div>
+            {%- endif -%}
+            {%- endif -%}
+            <h2>{{ projects.name }}</h2>
+            <p class = "proj-excerpt">
+            {{ projects.excerpt | markdownify | strip_html | truncatewords: 50 }}
+            </p>
+            {%- if projects.is_article == true -%}
+            <p><a class="proj-link" href="{{projects.url | relative_url}}">
+                Read the article...
+            </a></p>
+            {%- endif -%}
+            <p class="proj-meta">
+                Tags: 
+                {% for tag in projects.tags %}
+                    <span>
+                        {{tag}}{%- if forloop.index < forloop.length -%},{%- endif -%}
+                    </span>
+                {% endfor %}
+            </p>
+            {%- if projects.itch -%}
+            <a href="{{ projects.itch }}"><img style="height:42px;" src="assets/images/badges/itch.png"></img></a>
+            {%- endif -%}
+            {%- if projects.play -%}
+            <a href="{{ projects.play }}"><img style="height:42px;" src="assets/images/badges/play.png"></img></a>
+            {%- endif -%}
+
+
+		          </div>
+		      {% endfor %}
+		  </div>
+	   {%- endif -%}
+    </div>
+
+
+    {%- if site.projects.size < 0 -%}
+        {% assign with_order = site.projects | where_exp: "item", "item.order != nil" | sort: "order" %}
+        {% assign without_order = site.projects | where_exp: "item", "item.order == nil" %}
+        {% assign sorted_items = with_order | concat: without_order %}
+        <ul class="post-list">
+        {% for projects in sorted_items %}
+            <div class="proj-elmt">
+
+            <!--thumbnail-->
+            {%- if projects.thumbnail != null -%}
+
+            {%- if projects.thumbnail.first -%}
+            <div class="carousel">
+                <button class="nav prev" aria-label="Previous image">‹</button>
+
+                <div class="carousel-track" id="carouselTrack">
+                    {% for image in projects.thumbnail %}
+                    <div class="carousel-slide">
+                        <img src="{{ image }}" alt="Gallery image">
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <button class="nav next" aria-label="Next image">›</button>
+            </div>
+            {%- else -%}
+            <div class="carousel-slide">
+            <img src="{{projects.thumbnail}}">
+            </div>
+            {%- endif -%}
+            {%- endif -%}
+
+            <h2>{{ projects.name }}</h2>
+            <p class = "proj-excerpt">
+            {{ projects.excerpt | markdownify | strip_html | truncatewords: 50 }}
+            </p>
+            {%- if projects.is_article == true -%}
+            <p><a class="proj-link" href="{{projects.url | relative_url}}">
+                Read the article...
+            </a></p>
+            {%- endif -%}
+            <p class="proj-meta">
+                Tags: 
+                {% for tag in projects.tags %}
+                    <span>
+                        {{tag}}{%- if forloop.index < forloop.length -%},{%- endif -%}
+                    </span>
+                {% endfor %}
+            </p>
+            {%- if projects.itch -%}
+            <a href="{{ projects.itch }}"><img style="height:42px;" src="assets/images/badges/itch.png"></img></a>
+            {%- endif -%}
+            {%- if projects.play -%}
+            <a href="{{ projects.play }}"><img style="height:42px;" src="assets/images/badges/play.png"></img></a>
+            {%- endif -%}
+            </div>
+        {% endfor %}
+        </ul>
+    {%- endif -%}
+
     <hr>
 
     {%- if posts.size > 0 -%}
@@ -140,64 +266,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     {%- endif %}
     {%- endif -%}
-
-    <hr>
-
-    <h2>Projects: </h2>
-
-    {%- if site.projects.size > 0 -%}
-        {% assign with_order = site.projects | where_exp: "item", "item.order != nil" | sort: "order" %}
-        {% assign without_order = site.projects | where_exp: "item", "item.order == nil" %}
-        {% assign sorted_items = with_order | concat: without_order %}
-        <ul class="post-list">
-        {% for projects in sorted_items %}
-            <div class="proj-elmt">
-
-            <!--thumbnail-->
-            {%- if projects.thumbnail != null -%}
-
-            {%- if projects.thumbnail.first -%}
-            <div class="carousel">
-                <button class="nav prev" aria-label="Previous image">‹</button>
-
-                <div class="carousel-track" id="carouselTrack">
-                    {% for image in projects.thumbnail %}
-                    <div class="carousel-slide">
-                        <img src="{{ image }}" alt="Gallery image">
-                    </div>
-                    {% endfor %}
-                </div>
-
-                <button class="nav next" aria-label="Next image">›</button>
-            </div>
-            {%- else -%}
-            <img src="{{projects.thumbnail}}">
-            {%- endif -%}
-
-
-            {%- endif -%}
-            <h2>{{ projects.name }}</h2>
-            <p class = "proj-excerpt">
-            {{ projects.excerpt | markdownify | strip_html | truncatewords: 50 }}
-            </p>
-            {%- if projects.is_article == true -%}
-            <p><a class="proj-link" href="{{projects.url | relative_url}}">
-                Read the article...
-            </a></p>
-            {%- endif -%}
-            <p class="proj-meta">
-                Tags: 
-                {% for tag in projects.tags %}
-                    <span>
-                        {{tag}}{%- if forloop.index < forloop.length -%},{%- endif -%}
-                    </span>
-                {% endfor %}
-            </p>
-            </div>
-        {% endfor %}
-        </ul>
-    {%- endif -%}
-
 
 
 </div>
