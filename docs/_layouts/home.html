@@ -118,6 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="{{projects.thumbnail}}">
             </div>
             {%- endif -%}
+            {%- elsif projects.youtube -%}
+            <div class="carousel-slide">
+                <iframe width="560" height="315" src={{ projects.youtube }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
             {%- endif -%}
             <h2>{{ projects.name }}</h2>
             <p class = "proj-excerpt">
@@ -142,7 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
             {%- if projects.play -%}
             <a href="{{ projects.play }}"><img style="height:42px;" src="assets/images/badges/play.png"></img></a>
             {%- endif -%}
-
+            {%- if projects.github -%}
+            <a href="{{ projects.github }}"><img style="height:42px;" src="assets/images/badges/github.webp"></img></a>
+            {%- endif -%}
 
 		          </div>
 		      {% endfor %}
